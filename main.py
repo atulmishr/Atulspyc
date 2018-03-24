@@ -21,7 +21,13 @@ def start_chat(spy_name,spy_salutation,spy_age,spy_rating):
 print("Welcome to Spychat Application")
 choice = raw_input("Enter 1 for default choice:")
 
-spy = {}
+spy = {
+     'name' : " ",
+     'salutation' : " ",
+     'age' : 0,
+     'rating' : ' ',
+     'is_online':True
+}
 if choice == '1':
     spy['name'] = default.spy['name']
     spy['salutation'] = default.spy['salutation']
