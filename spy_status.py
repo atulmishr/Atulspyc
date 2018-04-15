@@ -33,7 +33,7 @@ def add_status(current_status_message):
 
     return (updated_status_message)
 
-#for loading a friend
+#for loading a friend status
 def load_status():
         read_object=open('status.csv','r')
         reader=csv.reader(read_object)

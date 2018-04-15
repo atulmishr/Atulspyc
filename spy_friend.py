@@ -40,11 +40,11 @@ def select_a_friend():
 #for sending a secret message
 
 def send_message():
-    friend_choice = select_a_friend()
+    #friend_choice = select_a_friend()
     original_name = raw_input("what is the name of the image:")
     output_path='output.jpg'
     text = raw_input("what you want to say")
-    Steganography.encode(original_image,output_path,text)
+    Steganography.encode(original_name,output_path,text)
 
     #new_chat = {
     #    "message":text,
@@ -52,20 +52,20 @@ def send_message():
     #    "sent_by_me": True
     #}
 
-    friend[friend_choice].chats.append(new_chat)
+    #friend[friend_choice].chats.append(new_chat)
     print("your secret message is ready")
 
 def read_message():
-    sender = select_a_friend()
+    #sender = select_a_friend()
     output_path = raw_input("What is the name of the file?")
     secret_text = Steganography.decode(output_path)
 
-    new_chat = ChatMessage(secret_text, False)
+    #new_chat = ChatMessage(secret_text, False)
     #new_chat = {
     #    "message": secret_text,
     #    "time":datetime.now(),
     #    "sent_by_me": False
     #}
-    friend[sender].chats.append(new_chat)
+    #friend[sender].chats.append(new_chat)
     print("your secret message has been  saved\n")
     print(secret_text)

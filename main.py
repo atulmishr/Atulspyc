@@ -19,8 +19,10 @@ def start_chat(spy_name,spy_salutation,spy_age,spy_rating):
              spy_friend.add_friend()
         elif Menu_choice =='3':
              print("you have choosen to Send message\n")
+             spy_friend.send_message()
         elif Menu_choice =='4':
              print("you have choosen to Read message\n")
+             spy_friend.read_message()
         elif Menu_choice == '5':
              print("you have choosen to close the Application\n")
              show_menu=False
@@ -38,40 +40,41 @@ choice = raw_input("Enter 1 for default choice:")
 #      'is_online':True
 #}
 if choice == '1':
-    SPY.name = SPY.name
-    SPY.salutation = SPY.salutation
-    SPY.age = SPY.age
-    SPY.rating = SPY.rating
-    SPY.is_online = SPY.is_online
+    spy=SPY('Kaaliya','Mr.',25,'A')
+    #spy_salutation = spy.salutation
+    #spy_age = spy.age
+    #spy_rating = spy.rating
+    #spy_is_online = spy.is_online
 else:
-    SPY.name=raw_input("Enter your Name:")
-    SPY.salutation=raw_input("Enter your Salutation(Mr. or Mrs.:)")
-    SPY.age=raw_input("Enter your Age:")
-    SPY.rating=raw_input("Enter your Rating:")
-    SPY.is_online=True
+    name=raw_input("Enter your Name:")
+    salutation=raw_input("Enter your Salutation(Mr. or Mrs.:)")
+    age=raw_input("Enter your Age:")
+    rating=raw_input("Enter your Rating:")
+    is_online=True
+    spy=SPY(name,age,rating,salutation)
 
 #Validating the name of the spy
-if SPY.name.isalpha() == False:
+if spy.name.isalpha() == False:
     print("Name is invalid")
     sys.exit(0)
 
 #Validating the age of the spy
-if int(SPY.age) <= 12 or int(SPY.age) >= 50:
+if int(spy.age) <= 12 or int(spy.age) >= 50:
     print("Age is invalid")
     sys.exit(0)
 
 #Rating of the spy
-if SPY.rating == 'A':
+if spy.rating == 'A':
    print("you are a 3 star spy")
-elif SPY.rating == 'B':
+elif spy.rating == 'B':
     print("you are a 2 star spy")
-elif SPY.rating == 'C':
+elif spy.rating == 'C':
     print("you are a 1 star spy")
 else:
     print("you have entered incorrect string")
     sys.exit(0)
 
-print("Hello " + SPY.salutation + SPY.name + ".")
-print("your age is %d" % int(SPY.age))
-print("your rating is " + SPY.rating)
-start_chat(SPY.name,SPY.salutation,SPY.age,SPY.rating)
+print("Hello " + spy.salutation + spy.name + ".")
+print("your age is %d" % int(spy.age))
+print("your rating is " + spy.rating)
+start_chat(spy.name,spy.salutation,spy.age,spy.rating)
